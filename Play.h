@@ -17,11 +17,11 @@ using namespace std;
 class Play {
 public:
 	Play(Display& _scr, int _width , int _height , int _latency );
-	void loop();				// основной цикл игры
-	bool again();				// вывод запроса и приём ответа от игрока
+	void loop();				// Г®Г±Г­Г®ГўГ­Г®Г© Г¶ГЁГЄГ« ГЁГЈГ°Г» С‚
+	bool again();				// ГўГ»ГўГ®Г¤ Г§Г ГЇГ°Г®Г±Г  ГЁ ГЇГ°ГЁВёГ¬ Г®ГІГўГҐГІГ  Г®ГІ ГЁГЈГ°Г®ГЄГ 
 	void pak(int y);            // "Press any key to continue"
-	void logo();                // вывод заставки игры
-	void goodbye();             // ввод при поражении
+	void logo();                // ГўГ»ГўГ®Г¤ Г§Г Г±ГІГ ГўГЄГЁ ГЁГЈГ°Г»
+	void goodbye();             // ГўГўГ®Г¤ ГЇГ°ГЁ ГЇГ®Г°Г Г¦ГҐГ­ГЁГЁ
 
 private:
 	enum Command { CMD_NOCOMMAND = 0, CMD_EXIT, CMD_LEFT, CMD_RIGHT, CMD_UP, CMD_DOWN };
@@ -29,14 +29,14 @@ private:
 
 	typedef pair<int, Command> Pair;
 
-	int width, height;      // ширина и высота игрового поля
-	int speed;            // задержка между изменением позиции в миллисекундах
-	Display scr;            // подсистема визуализации
-	Snake snake;           // змея
-	double durationOut;   // длительность игры
-	Pair commands[5];   // таблица команд управления игрой
-	void drawField();      // прорисовка игрового поля
-	Coord createFood();     // генерация позиции для еды
-	void Stats();      // вывод статистики, обновляется при увиличении длины змеи
-	Command getCommand();  // приём команды с клавиатуры
+	int width, height;      // ГёГЁГ°ГЁГ­Г  ГЁ ГўГ»Г±Г®ГІГ  ГЁГЈГ°Г®ГўГ®ГЈГ® ГЇГ®Г«Гї
+	int speed;            // Г§Г Г¤ГҐГ°Г¦ГЄГ  Г¬ГҐГ¦Г¤Гі ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГҐГ¬ ГЇГ®Г§ГЁГ¶ГЁГЁ Гў Г¬ГЁГ«Г«ГЁГ±ГҐГЄГіГ­Г¤Г Гµ
+	Display scr;            // ГЇГ®Г¤Г±ГЁГ±ГІГҐГ¬Г  ГўГЁГ§ГіГ Г«ГЁГ§Г Г¶ГЁГЁ
+	Snake snake;           // Г§Г¬ГҐГї
+	double durationOut;   // Г¤Г«ГЁГІГҐГ«ГјГ­Г®Г±ГІГј ГЁГЈГ°Г»
+	Pair commands[5];   // ГІГ ГЎГ«ГЁГ¶Г  ГЄГ®Г¬Г Г­Г¤ ГіГЇГ°Г ГўГ«ГҐГ­ГЁГї ГЁГЈГ°Г®Г©
+	void drawField();      // ГЇГ°Г®Г°ГЁГ±Г®ГўГЄГ  ГЁГЈГ°Г®ГўГ®ГЈГ® ГЇГ®Г«Гї
+	Coord createFood();     // ГЈГҐГ­ГҐГ°Г Г¶ГЁГї ГЇГ®Г§ГЁГ¶ГЁГЁ Г¤Г«Гї ГҐГ¤Г»
+	void Stats();      // ГўГ»ГўГ®Г¤ Г±ГІГ ГІГЁГ±ГІГЁГЄГЁ, Г®ГЎГ­Г®ГўГ«ГїГҐГІГ±Гї ГЇГ°ГЁ ГіГўГЁГ«ГЁГ·ГҐГ­ГЁГЁ Г¤Г«ГЁГ­Г» Г§Г¬ГҐГЁ
+	Command getCommand();  // ГЇГ°ГЁВёГ¬ ГЄГ®Г¬Г Г­Г¤Г» Г± ГЄГ«Г ГўГЁГ ГІГіГ°Г»
 };
