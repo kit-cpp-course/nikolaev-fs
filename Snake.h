@@ -14,16 +14,16 @@ typedef vector<Coord> CoordVector;
 class Snake {
 public:
 	Snake();
-	void reset(Coord start_pos);                   // сброс змеи
-	void draw(Display& scr);                       // первичная отрисовка змеи на экране
-	void move(const Coord& delta, Display& scr);   // передвижение змеи на приращение координат(delta)
-	void grow(const Coord& pos, int growbits);     // увеличение длины змеи
-	bool into(const Coord& pos);                   // метод проверяет попадание координаты в тело змеи(для еды)
-	Coord head();                                  // метод возвращает координаты головы змеи
-	int size();                                    // метод возвращает длину змеи
+	void reset(Coord start_pos);                   // СЃР±СЂРѕСЃ Р·РјРµРё
+	void draw(Display& scr);                       // РїРµСЂРІРёС‡РЅР°СЏ РѕС‚СЂРёСЃРѕРІРєР° Р·РјРµРё РЅР° СЌРєСЂР°РЅРµ
+	void move(const Coord& delta, Display& scr);   // РїРµСЂРµРґРІРёР¶РµРЅРёРµ Р·РјРµРё РЅР° РїСЂРёСЂР°С‰РµРЅРёРµ РєРѕРѕСЂРґРёРЅР°С‚(delta)
+	void grow(const Coord& pos, int growbits);     // СѓРІРµР»РёС‡РµРЅРёРµ РґР»РёРЅС‹ Р·РјРµРё
+	bool into(const Coord& pos);                   // РјРµС‚РѕРґ РїСЂРѕРІРµСЂСЏРµС‚ РїРѕРїР°РґР°РЅРёРµ РєРѕРѕСЂРґРёРЅР°С‚С‹ РІ С‚РµР»Рѕ Р·РјРµРё(РґР»СЏ РµРґС‹)
+	Coord head();                                  // РјРµС‚РѕРґ РІРѕР·РІСЂР°С‰Р°РµС‚ РєРѕРѕСЂРґРёРЅР°С‚С‹ РіРѕР»РѕРІС‹ Р·РјРµРё
+	int size();                                    // РјРµС‚РѕРґ РІРѕР·РІСЂР°С‰Р°РµС‚ РґР»РёРЅСѓ Р·РјРµРё
 
 private:
-	CoordVector snk;       // вектор координат сегментов тела змеи
-	char headS;         // символ для головы змеи
-	unsigned int drawn;     // длина отрисованного тела змеи
+	CoordVector snk;       // РІРµРєС‚РѕСЂ РєРѕРѕСЂРґРёРЅР°С‚ СЃРµРіРјРµРЅС‚РѕРІ С‚РµР»Р° Р·РјРµРё
+	char headS;         // СЃРёРјРІРѕР» РґР»СЏ РіРѕР»РѕРІС‹ Р·РјРµРё
+	unsigned int drawn;     // РґР»РёРЅР° РѕС‚СЂРёСЃРѕРІР°РЅРЅРѕРіРѕ С‚РµР»Р° Р·РјРµРё
 };
