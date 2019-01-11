@@ -6,35 +6,35 @@
 #include <conio.h>
 
 /*
-Класс исключения для класса CScreen
+ГЉГ«Г Г±Г± ГЁГ±ГЄГ«ГѕГ·ГҐГ­ГЁГї Г¤Г«Гї ГЄГ«Г Г±Г±Г  Screen
 */
 
 class Exception {
 public:
 	Exception(int _err) : err(_err) {}
-	const char *what();         // возвращает строку с описанием ошибки
-	int err;                    // код ошибки
+	const char *what();         // ГўГ®Г§ГўГ°Г Г№Г ГҐГІ Г±ГІГ°Г®ГЄГі Г± Г®ГЇГЁГ±Г Г­ГЁГҐГ¬ Г®ГёГЁГЎГЄГЁ
+	int err;                    // ГЄГ®Г¤ Г®ГёГЁГЎГЄГЁ
 };
 
 
 /*
-Система координат:
-	(0, 0)  -  левый верхний угол экрана
-	ось X   -  вправо
-	ось Y   -  вниз 
+Г‘ГЁГ±ГІГҐГ¬Г  ГЄГ®Г®Г°Г¤ГЁГ­Г ГІ:
+	(0, 0)  -  Г«ГҐГўГ»Г© ГўГҐГ°ГµГ­ГЁГ© ГіГЈГ®Г« ГЅГЄГ°Г Г­Г 
+	Г®Г±Гј X   -  ГўГЇГ°Г ГўГ®
+	Г®Г±Гј Y   -  ГўГ­ГЁГ§ 
 */
 
 class Display {
 public:
 	Display();
 	~Display();
-	void cursorShow(bool visible);                  // показать/скрыть курсор
-	void texAttribut(WORD attr);                    // установить цвет текста/фона
-	void pos(int x, int y, char ch = 0);            // координаты курсора и
-													// вывод символа если ch != 0
-	void posStrOut(int x, int y, const char *str);  // координаты курсора и вывод строки
+	void cursorShow(bool visible);                  // ГЇГ®ГЄГ Г§Г ГІГј/Г±ГЄГ°Г»ГІГј ГЄГіГ°Г±Г®Г°
+	void texAttribut(WORD attr);                    // ГіГ±ГІГ Г­Г®ГўГЁГІГј Г¶ГўГҐГІ ГІГҐГЄГ±ГІГ /ГґГ®Г­Г 
+	void pos(int x, int y, char ch = 0);            // ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ» ГЄГіГ°Г±Г®Г°Г  ГЁ
+													// ГўГ»ГўГ®Г¤ Г±ГЁГ¬ГўГ®Г«Г  ГҐГ±Г«ГЁ ch != 0
+	void posStrOut(int x, int y, const char *str);  // ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ» ГЄГіГ°Г±Г®Г°Г  ГЁ ГўГ»ГўГ®Г¤ Г±ГІГ°Г®ГЄГЁ
 
-	void cls();                                     // очистка экрана
+	void cls();                                     // Г®Г·ГЁГ±ГІГЄГ  ГЅГЄГ°Г Г­Г 
 
 private:
 	HANDLE hConsoleOutput;
