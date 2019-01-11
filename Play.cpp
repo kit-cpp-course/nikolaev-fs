@@ -1,4 +1,4 @@
-//Play.Сpp
+//Play.cpp
 
 #include "Play.h"
 
