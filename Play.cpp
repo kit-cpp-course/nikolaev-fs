@@ -33,7 +33,7 @@ Play::Command Play::getCommand() {
 	int code;
 
 	code = _getch();
-	if (code == 0 || code == 0xe0) {
+	if (code == 0) {
 		code = _getch();
 	}
 
